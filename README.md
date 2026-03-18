@@ -1,76 +1,169 @@
-# Getting Started with Create React App
+# AI Product Recommendation System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that provides product recommendations based on user preferences. The system combines AI-based recommendations with a rule-based fallback to ensure reliability.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+* User input-based product search (e.g., "phone under 500")
+* AI-powered recommendation system (OpenAI integration)
+* Rule-based fallback system (works without API)
+* Dynamic product listing
+* Filtering based on category and price
+* React-based frontend
+* REST API backend using Node.js and Express
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.js
+* Axios
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Node.js
+* Express.js
+* OpenAI API (optional)
+* dotenv
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```
+ai-recommendation/
+│
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── src/
+│   ├── App.js
+│   ├── products.js
+│   └── index.js
+│
+├── package.json
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Clone the Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+git clone https://github.com/your-username/ai-recommendation.git
+cd ai-recommendation
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Install Frontend Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm install
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Setup Backend
 
-### Analyzing the Bundle Size
+```
+cd backend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### Environment Variables (Optional for AI)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Create a `.env` file inside the backend folder:
 
-### Advanced Configuration
+```
+OPENAI_API_KEY=your_api_key_here
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Start Backend
 
-### `npm run build` fails to minify
+```
+cd backend
+node server.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
 
-# Ai-Recommendation
+### Start Frontend
 
-## Demo Video
+Open a new terminal:
 
-[Watch demo video](./20260318-0825-21.6753514.mp4)
+```
+npm start
+```
+
+---
+
+### Access the App
+
+```
+http://localhost:3000
+```
+
+---
+
+## Example Inputs
+
+* I want a phone under 500
+* laptop under 800
+* cheap phone
+
+---
+
+## How It Works
+
+1. User enters a preference query
+2. Frontend sends request to backend API
+3. Backend:
+
+   * Attempts AI-based recommendation (if available)
+   * Falls back to rule-based filtering if AI fails
+4. Results are returned and displayed
+
+---
+
+## Error Handling
+
+* Handles API failures gracefully
+* Uses fallback logic when AI is unavailable
+* Prevents application crashes
+
+---
+
+## Future Improvements
+
+* Improved UI design
+* Recommendation scoring
+* Better query understanding
+* User authentication
+* Mobile responsiveness
+
+---
+
+## License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## Author
+
+Tushar
